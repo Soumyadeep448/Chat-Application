@@ -4,6 +4,10 @@ const form=document.getElementById('send-container');
 const messageInput=document.getElementById('messageInp')
 const messageContainer=document.querySelector(".container")
 var audio=new Audio("Resources/pop.mp3")
+var c=0;
+const headertxt=document.getElementById('headtxt');
+
+
 
 const append =(message,position)=>{
     console.log('Appedning');
@@ -23,6 +27,11 @@ form.addEventListener('submit',(e)=>{
     e.preventDefault(); //Prevents reloading the page.
     const message = messageInput.value;
     append(`You: ${message}`,'right')
+    c=c+1;
+    if(c>0)
+    {
+        headertxt.innerText="Welcome "+name2+"!";
+    }
     socket.emit('send',message)
     messageInput.value=''; //Empties the form after the message is sent
 })
@@ -31,6 +40,9 @@ form.addEventListener('submit',(e)=>{
 
 const name2=prompt("Enter your name to Join");
 socket.emit('new-user-joined', name2); //new-user-joined event from index.js.
+
+
+
 
 socket.on('user-joined',name=>{
     append(`${name} joined the chat`,'right');
@@ -43,3 +55,5 @@ socket.on('receive',data=>{
 socket.on('left',name=>{
     append(`${name} left the chat`,'left');
 })
+
+headertxt.innerText="Welcome "+name2+"! You may start typing..";
