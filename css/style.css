@@ -22,20 +22,22 @@ body{
 }
 
 .message{
-    background-color: grey ;
+    
     width: 24%;
     padding: 10px;
     margin: 17px 12px;
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 0.5px solid black;
+    border-radius: 20px;
 }
 
 .left{
+    background-color: rgb(238, 238, 238) ;
     float: left;
     clear: both;
 }
 
 .right{
+    background-color: rgb(184, 179, 255) ;
     float: right;
     clear: both;
 }
