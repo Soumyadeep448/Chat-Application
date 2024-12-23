@@ -1,6 +1,7 @@
 //Node server which will handle socket.io to connections.
 const io=require('socket.io')(8000,{
     cors: {
+        // origin: ["https://soft-biscochitos-9713fe.netlify.app"],
         origin: ["http://localhost:5500", "http://127.0.0.1:5500"],  
         methods: ["GET", "POST"],
         allowedHeaders: ["Content-Type"],
