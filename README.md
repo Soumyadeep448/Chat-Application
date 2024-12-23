@@ -1,0 +1,1 @@
+Developed a real-time chat application using Node.js and Socket.IO, enabling seamless communication with live message updates. Implemented efficient server-client architecture, ensuring minimal latency and real-time interaction for users.
